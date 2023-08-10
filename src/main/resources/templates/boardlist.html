@@ -10,9 +10,7 @@
     width : 500px;
     margin : 0 auto;
     margin-top : 40px;
-}
-
-
+    }
 </style>
 <body>
 
@@ -21,16 +19,19 @@
     <table>
         <thead>
             <tr>
-                <th>no.</th>
+                <th>No.</th>
                 <th>Title</th>
 
             </tr>
         </thead>
         <tbody>
-        <tr th:each="board : ${list}">
-            <td th:text="${board.id}">1</td>
-            <td th:text="${board.text}">Title</td>
-        </tr>
+            <tr th:each="board : ${list}">
+                <td th:text="${board.id}">1</td>
+                <td>
+                    <a th:text="${board.title}" th:href="@{/board/view(id=${board.id})}">
+                    </a></td>
+
+            </tr>
         </tbody>
     </table>
 </div>
